@@ -1,0 +1,104 @@
+.controller {
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+
+    margin: auto;
+}
+
+body{
+    /*background-color: black;*/
+}
+
+.d-pad {
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 5px;
+    width: 200px;
+    height: 200px;
+}
+
+.btn:active {
+    background-color: gray;
+    transform: translateY(2px);
+    color: white;
+}
+
+.d-pad button {
+    border: none;
+    background-color: white;
+    font-size: 24px;
+}
+
+.middle {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.up {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.down {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+.left {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.right {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+.volume {
+    margin: auto;
+    margin-top: 50px;
+    display: grid;
+    grid-gap: 20px;
+}
+
+.menu {
+    margin: auto;
+    margin-top: 50px;
+    display: grid;
+    grid-gap: 100px;
+    grid-template-columns: auto;
+}
+
+.btn-principaux {
+    border-radius: 70%;
+    border: 1px black;
+    padding: 5px;
+    font-size: 31px;
+    height: 70px;
+    width: 70px;
+}
+
+.btn-option {
+    border-radius: 70%;
+    height: 50px;
+    width: 50px;
+    font-size: 10px;
+}
+
+#dpad{
+    width: 200px; 
+    height: 200px;
+}
+
+#controller{
+    width: 500px;
+}
+
+#btn{
+    width: 50px;
+}
