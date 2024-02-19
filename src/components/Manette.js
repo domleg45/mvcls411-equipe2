@@ -8,7 +8,7 @@ function Manette(){
             <div class="d-pad d-grid gap-3" id="dpad">
               <button type="button" class="btn btn-light up"><i class="bi bi-caret-up-fill"></i></button>
               <button type="button" class="btn btn-light left"><i class="bi bi-caret-left-fill"></i></button>
-              <button type="button" class="btn btn-light middle" ><i class="bi bi-check-circle-fill"></i></button>
+              <button type="button" class="btn btn-light middle"><i class="bi bi-check-circle-fill"></i></button>
               <button type="button" class="btn btn-light right"><i class="bi bi-caret-right-fill"></i></button>
               <button type="button" class="btn btn-light down"><i class="bi bi-caret-down-fill"></i></button>
             </div>
@@ -20,11 +20,11 @@ function Manette(){
               </div>
               <div class="d-flex justify-content-center gap-3">
                 <button class="btn btn-light fs-4"><i class="bi bi-rewind-fill"></i></button>
-                <button class="btn btn-light fs-4"><i class="bi bi-play-fill" id="startBtn"></i></button>
+                <button class="btn btn-light fs-4"><i class="bi bi-play-fill" id="playBtn"></i></button>
                 <button class="btn btn-light fs-4"><i class="bi bi-fast-forward-fill" id="nextBtn"></i></button>
               </div>
               <div class="d-flex justify-content-center gap-3">
-                <button class="btn btn-light fs-4"><i class="bi bi-house-door-fill"></i></button>
+                <button class="btn btn-light fs-4" id="startBtn"><i class="bi bi-house-door-fill"></i></button>
                 <button class="btn btn-light fs-4"><i class="bi bi-gear-fill"></i></button>
                 <button class="btn btn-light fs-4" id="connectButton"><i class="bi bi-power"></i></button>
               </div>
