@@ -6,7 +6,6 @@ let currentVideoUrl;
 let updateInterval;
 let remotePlayerController; // Declare remotePlayerController at a higher scope
 
-const seekSlider = document.getElementById('seekSlider');
 const currentTimeElement = document.getElementById('currentTime');
 const totalTimeElement = document.getElementById('totalTime');
 const defaultContentType = 'video/mp4';
@@ -58,20 +57,7 @@ document.getElementById('playBtn').addEventListener('click', () => {
     }
 });
 
-document.getElementById('fastForward').addEventListener('click', () => {
-    if (currentMediaSession && remotePlayerController) {
-        const currentTime = currentMediaSession.getEstimatedTime();
-        const seekTime = currentTime + 10;
-        remotePlayerController.seek(seekTime);
-    }
-});
-document.getElementById('fastBackward').addEventListener('click', () => {
-    if (currentMediaSession && remotePlayerController) {
-        const currentTime = currentMediaSession.getEstimatedTime();
-        const seekTime = currentTime - 10;
-        remotePlayerController.seek(seekTime);
-    }
-});
+
 
 
 function sessionListener(newSession) {
@@ -87,24 +73,21 @@ function sessionListener(newSession) {
 function initializeSeekSlider(remotePlayerController, mediaSession) {
     currentMediaSession = mediaSession;
     document.getElementById('playBtn').style.display = 'block';
-   // Set max value of seek slider to media duration in seconds
-   seekSlider.max = mediaSession.media.duration;
 
-    // Update seek slider and time elements on time update
-    updateInterval = setInterval(() => {
-        const currentTime = mediaSession.getEstimatedTime();
-        const totalTime = mediaSession.media.duration;
-  
-        seekSlider.value = currentTime;
-        currentTimeElement.textContent = formatTime(currentTime);
-        totalTimeElement.textContent = formatTime(totalTime);
-      }, 1000); //chaque 1000 ms... 1 sec
-  
-      // slider change
-      seekSlider.addEventListener('input', () => {
-        const seekTime = parseFloat(seekSlider.value);
-        remotePlayerController.seek(seekTime);
-      });
+      document.getElementById('fastForward').addEventListener('click', () => {
+        if (currentMediaSession && remotePlayerController) {
+            const currentTime = currentMediaSession.getEstimatedTime();
+            const seekTime = currentTime + 10;
+            remotePlayerController.seek(seekTime);
+        }
+    });
+    document.getElementById('fastBackward').addEventListener('click', () => {
+        if (currentMediaSession && remotePlayerController) {
+            const currentTime = currentMediaSession.getEstimatedTime();
+            const seekTime = currentTime - 10;
+            remotePlayerController.seek(seekTime);
+        }
+    });
  }
 
 function receiverListener(availability) {
