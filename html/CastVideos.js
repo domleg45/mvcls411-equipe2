@@ -48,6 +48,14 @@ document.getElementById('playBtn').addEventListener('click', () => {
     }
 });
 
+document.getElementById('fastForward').addEventListener('click', () => {
+    if (currentMediaSession) {
+        const currentTime = currentMediaSession.getEstimatedTime();
+        const seekTime = currentTime + 10;
+        currentMediaSession.seek(seekTime, onMediaCommandSuccess, onError);
+    }
+});
+
 
 function sessionListener(newSession) {
     currentSession = newSession;
