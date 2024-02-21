@@ -8,15 +8,14 @@ const seekSlider = document.getElementById('seekSlider');
 const currentTimeElement = document.getElementById('currentTime');
 const totalTimeElement = document.getElementById('totalTime');
 const defaultContentType = 'video/mp4';
-const applicationID = '3DDC41A0';
 const videoList = [
     'https://transfertco.ca/video/DBillPrelude.mp4',
     'https://transfertco.ca/video/DBillSpotted.mp4',
     'https://transfertco.ca/video/usa23_7_02.mp4'
     // Add more video URLs as needed
 ];
-
-document.getElementById('connectButton').addEventListener('click', () => {
+let connectbtn = document.getElementById('connectButton');
+connectbtn.addEventListener('click', () => {
     initializeApiOnly();
 });
 
@@ -31,6 +30,15 @@ document.getElementById('startBtn').addEventListener('click', () => {
 document.getElementById('nextBtn').addEventListener('click', () => {
     if (currentSession) {
         currentVideoIndex = (currentVideoIndex + 1) % videoList.length;
+        loadMedia(videoList[currentVideoIndex]);
+    } else {
+        alert('Connectez-vous sur chromecast en premier');
+    }
+});
+
+document.getElementById('previousBtn').addEventListener('click', () => {
+    if (currentSession) {
+        currentVideoIndex = (currentVideoIndex - 1) % videoList.length;
         loadMedia(videoList[currentVideoIndex]);
     } else {
         alert('Connectez-vous sur chromecast en premier');
@@ -56,11 +64,21 @@ document.getElementById('fastForward').addEventListener('click', () => {
     }
 });
 
+document.getElementById('fastBackward').addEventListener('click', () => {
+    if (currentMediaSession) {
+        const currentTime = currentMediaSession.getEstimatedTime();
+        const seekTime = currentTime - 10;
+        currentMediaSession.seek(seekTime, onMediaCommandSuccess, onError);
+    }
+});
+
 
 function sessionListener(newSession) {
     currentSession = newSession;
     document.getElementById('startBtn').style.display = 'block';
     document.getElementById('nextBtn').style.display = 'block';
+    document.getElementById('previousBtn').style.display = 'block';
+    document.getElementById('fastBackward').style.display = 'block';
 }
 
 
