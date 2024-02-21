@@ -60,7 +60,7 @@ document.getElementById('fastForward').addEventListener('click', () => {
     if (currentMediaSession) {
         const currentTime = currentMediaSession.getEstimatedTime();
         const seekTime = currentTime + 10;
-        currentMediaSession.seek(seekTime, onMediaCommandSuccess, onError);
+        remotePlayerController.seek(seekTime);
     }
 });
 
@@ -68,7 +68,7 @@ document.getElementById('fastBackward').addEventListener('click', () => {
     if (currentMediaSession) {
         const currentTime = currentMediaSession.getEstimatedTime();
         const seekTime = currentTime - 10;
-        currentMediaSession.seek(seekTime, onMediaCommandSuccess, onError);
+        remotePlayerController.seek(seekTime);
     }
 });
 
