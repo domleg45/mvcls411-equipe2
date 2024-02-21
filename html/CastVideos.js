@@ -4,6 +4,8 @@ let isPlaying = true;
 let currentVideoIndex = 0;
 let currentVideoUrl;
 let updateInterval;
+let remotePlayerController; // Declare remotePlayerController at a higher scope
+
 const seekSlider = document.getElementById('seekSlider');
 const currentTimeElement = document.getElementById('currentTime');
 const totalTimeElement = document.getElementById('totalTime');
@@ -57,15 +59,14 @@ document.getElementById('playBtn').addEventListener('click', () => {
 });
 
 document.getElementById('fastForward').addEventListener('click', () => {
-    if (currentMediaSession) {
+    if (currentMediaSession && remotePlayerController) {
         const currentTime = currentMediaSession.getEstimatedTime();
         const seekTime = currentTime + 10;
         remotePlayerController.seek(seekTime);
     }
 });
-
 document.getElementById('fastBackward').addEventListener('click', () => {
-    if (currentMediaSession) {
+    if (currentMediaSession && remotePlayerController) {
         const currentTime = currentMediaSession.getEstimatedTime();
         const seekTime = currentTime - 10;
         remotePlayerController.seek(seekTime);
@@ -139,12 +140,12 @@ function loadMedia(videoUrl) {
     const mediaInfo = new chrome.cast.media.MediaInfo(videoUrl, defaultContentType);
     const request = new chrome.cast.media.LoadRequest(mediaInfo);
     const remotePlayer = new cast.framework.RemotePlayer();
-    const remotePlayerController = new cast.framework.RemotePlayerController(remotePlayer);
+    remotePlayerController = new cast.framework.RemotePlayerController(remotePlayer); // Assign to remotePlayerController here
 
     currentSession.loadMedia(request, mediaSession => {
         console.log('Media chargé avec succès');
         initializeSeekSlider(remotePlayerController, mediaSession);
-      }, onError);
+    }, onError);
 }
 
 function formatTime(timeInSeconds) {
