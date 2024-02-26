@@ -5,7 +5,7 @@ let currentVideoIndex = 0;
 let currentVideoUrl;
 let updateInterval;
 let remotePlayerController; // Declare remotePlayerController at a higher scope
-
+ 
 const currentTimeElement = document.getElementById('currentTime');
 const totalTimeElement = document.getElementById('totalTime');
 const defaultContentType = 'video/mp4';
@@ -91,6 +91,10 @@ function initializeSeekSlider(remotePlayerController, mediaSession) {
             remotePlayerController.seek(seekTime);
         }
     });
+    seekSlider.addEventListener('input', () => {
+        const seekTime = parseFloat(seekSlider.value);
+        remotePlayerController.seek(seekTime);
+      });
  }
 
  function receiverListener(availability) {
@@ -133,7 +137,7 @@ function loadMedia(videoUrl) {
 
     currentSession.loadMedia(request, mediaSession => {
         console.log('Media chargé avec succès');
-        //initializeSeekSlider(remotePlayerController, mediaSession);
+        initializeSeekSlider(remotePlayerController, mediaSession);
     }, onError);
 }
 
