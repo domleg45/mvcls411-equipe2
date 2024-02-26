@@ -60,24 +60,23 @@ function sessionListener(newSession) {
 function initializeSeekSlider(remotePlayerController, mediaSession) {
     currentMediaSession = mediaSession;
     document.getElementById('playBtn').style.display = 'block';
-   // Set max value of seek slider to media duration in seconds
-   seekSlider.max = mediaSession.media.duration;
-
-    // Update seek slider and time elements on time update
-    updateInterval = setInterval(() => {
-        const currentTime = mediaSession.getEstimatedTime();
-        const totalTime = mediaSession.media.duration;
-  
-        seekSlider.value = currentTime;
-        currentTimeElement.textContent = formatTime(currentTime);
-        totalTimeElement.textContent = formatTime(totalTime);
-      }, 1000); //chaque 1000 ms... 1 sec
-  
-      // slider change
-      seekSlider.addEventListener('input', () => {
-        const seekTime = parseFloat(seekSlider.value);
-        remotePlayerController.seek(seekTime);
-      });
+ 
+      document.getElementById('fastForward').addEventListener('click', () => {
+        if (currentMediaSession && remotePlayerController) {
+            const currentTime = currentMediaSession.getEstimatedTime();
+            const seekTime = currentTime + 10;
+            currentMediaSession.currentTime = seekTime;
+            remotePlayerController.SeekRequest(currentMediaSession.currentTime);
+        }
+    });
+    document.getElementById('fastBackward').addEventListener('click', () => {
+        if (currentMediaSession && remotePlayerController) {
+            const currentTime = currentMediaSession.getEstimatedTime();
+            const seekTime = currentTime - 10;
+            currentMediaSession.currentTime = seekTime;
+            remotePlayerController.SeekRequest(currentMediaSession.currentTime);
+        }
+    });
  }
 
 function receiverListener(availability) {
