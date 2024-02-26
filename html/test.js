@@ -98,14 +98,14 @@ function initializeSeekSlider(remotePlayerController, mediaSession) {
       document.getElementById('fastForward').addEventListener('click', () => {
         if (currentMediaSession && remotePlayerController) {
             const currentTime = currentMediaSession.getEstimatedTime();
-            const seekTime = currentTime + 10;
+            const seekTime = currentTime + 10000;
             remotePlayerController.seek(seekTime);
         }
     });
     document.getElementById('fastBackward').addEventListener('click', () => {
         if (currentMediaSession && remotePlayerController) {
             const currentTime = currentMediaSession.getEstimatedTime();
-            const seekTime = currentTime - 10;
+            const seekTime = currentTime - 10000;
             remotePlayerController.seek(seekTime);
         }
     });
@@ -151,7 +151,7 @@ function loadMedia(videoUrl) {
 
     currentSession.loadMedia(request, mediaSession => {
         console.log('Media chargé avec succès');
-        //initializeSeekSlider(remotePlayerController, mediaSession);
+        initializeSeekSlider(remotePlayerController, mediaSession);
     }, onError);
 }
 
