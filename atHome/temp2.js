@@ -13,7 +13,8 @@ const defaultContentType = 'video/mp4';
 const videoList = [
     'https://transfertco.ca/video/DBillPrelude.mp4',
     'https://transfertco.ca/video/DBillSpotted.mp4',
-    'https://transfertco.ca/video/usa23_7_02.mp4'
+    'https://transfertco.ca/video/usa23_7_02.mp4',
+    'https://github.com/domleg45/mvcls411-equipe2/blob/main/ULTRAKILL%20SFM%20-%20She's%20so%20fine.mp4'
 ];
 
 document.getElementById('connectButton').addEventListener('click', () => {
