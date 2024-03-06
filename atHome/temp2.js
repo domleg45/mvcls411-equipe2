@@ -11,10 +11,12 @@ const currentTimeElement = document.getElementById('currentTime');
 const totalTimeElement = document.getElementById('totalTime');
 const defaultContentType = 'video/mp4';
 const videoList = [
+    'https://github.com/2289642/2289642.github.io/raw/main/kaisen.mp4',
+    'https://github.com/2289642/2289642.github.io/raw/main/monkey.mp4',
+    'https://github.com/2289642/2289642.github.io/raw/main/ninja.mp4',
     'https://transfertco.ca/video/DBillPrelude.mp4',
     'https://transfertco.ca/video/DBillSpotted.mp4',
-    'https://transfertco.ca/video/usa23_7_02.mp4',
-    'https://github.com/domleg45/mvcls411-equipe2/blob/main/ULTRAKILL%20SFM%20-%20She's%20so%20fine.mp4'
+    'https://transfertco.ca/video/usa23_7_02.mp4'
 ];
 
 document.getElementById('connectButton').addEventListener('click', () => {
