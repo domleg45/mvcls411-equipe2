@@ -42,11 +42,11 @@ Voici un tutoriel simplifié de la Controller :
   - Bouton Droit : Avance à la prochaine vidéo dans la liste de média
   - Bouton Gauche : Recule à la précédante vidéo dans la liste de média
 
-  ```diff
-  * -Power
+
+*  $${\color{red}Power}$$
   - Sert à connecter le Controller au chromecast 
   
-  ```
+
 
 
 
