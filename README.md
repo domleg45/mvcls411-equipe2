@@ -43,7 +43,7 @@ Voici un tutoriel simplifié de la Controller :
   - Bouton Gauche : Recule à la précédante vidéo dans la liste de média
 
 
-*  $${\color{red}Power}$$
+* $${\color{red}Power}$$
   - Sert à connecter le Controller au chromecast 
   
 
