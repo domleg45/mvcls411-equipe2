@@ -46,6 +46,9 @@ Voici un tutoriel simplifié de la Controller :
 * Power
   - Sert à connecter le Controller au chromecast 
   
+* Settings 
+  - Ne fait Rien (aucune idée pourquoi ce bouton existe 🤷‍♂️?)
+  
 
 
 
