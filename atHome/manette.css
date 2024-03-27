@@ -69,10 +69,22 @@ body{
     grid-template-columns: auto;
 }
 
+#rewind{
+    max-height: 50px;
+    margin-top: 25px;
+}
+
+#forward{
+    max-height: 50px;
+    margin-top: 25px;
+}
+
 #Play_Pause{
     background-color: rgb(213, 183, 147);
     border-color: darkgoldenrod;
     border: solid 2px;
+    padding: 30px;
+    border-radius: 50%;
 }
 
 
