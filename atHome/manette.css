@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
     background-color: black;
-
+    border-radius: 20px;
     margin: auto;
 }
 
@@ -87,6 +87,13 @@ body{
     border-radius: 50%;
 }
 
+#Play_Pause:hover{
+    background-color: rgb(177, 151, 120);
+
+}
+
+
+
 
 .btn-principaux {
     border-radius: 70%;
@@ -107,7 +114,8 @@ body{
 
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400');
 #bg,
-#connectButton {
+#connectButton,
+#bg1 {
   position: absolute;
   width: 50px;
   height: 50px;
@@ -138,7 +146,10 @@ body{
     background: rgb(221, 9, 9);
 }
 
-
+#bg1{
+    animation: pulse 5s ease forwards;
+    background: blue;
+}
 
 @keyframes pulse {
     0% {
