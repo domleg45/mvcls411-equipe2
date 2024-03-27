@@ -142,7 +142,7 @@ body{
   }
 
 #bg{
-    animation: pulse 2s ease infinite;
+    animation: pulse 1s ease infinite;
     background: rgb(221, 9, 9);
 }
 
