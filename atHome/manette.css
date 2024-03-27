@@ -39,19 +39,14 @@ body{
     grid-row: 2;
 }
 
-.up {
-    grid-column: 2;
-    grid-row: 1;
-}
-
-.down {
-    grid-column: 2;
-    grid-row: 3;
-}
 
 .left {
     grid-column: 1;
     grid-row: 2;
+}
+
+#startBtn{
+    background-color: rgb(160, 160, 249);
 }
 
 .right {
@@ -73,6 +68,13 @@ body{
     grid-gap: 100px;
     grid-template-columns: auto;
 }
+
+#Play_Pause{
+    background-color: rgb(213, 183, 147);
+    border-color: darkgoldenrod;
+    border: solid 2px;
+}
+
 
 .btn-principaux {
     border-radius: 70%;
@@ -120,7 +122,7 @@ body{
   }
 
 #bg{
-    animation: pulse 1.2s ease infinite;
+    animation: pulse 2s ease infinite;
     background: rgb(221, 9, 9);
 }
 
@@ -134,7 +136,7 @@ body{
       opacity: 0.3;
     }
     100% {
-      transform: scale(1.5);
+      transform: scale(1.7);
       opacity: 0;
     }
   }
