@@ -12,6 +12,10 @@ body{
     /*background-color: black;*/
 }
 
+#power_Container{
+    float: left;
+}
+
 .d-pad {
     margin: auto;
     display: grid;

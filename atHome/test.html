@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,34 +8,44 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="manette.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
 </head>
+
 <body>
-  
+
   <div class="container">
+    
     <div class="row justify-content-center align-items-center vh-100">
-      <div class="controller bg-black p-5" style="width: 500px; height: 750px;"> 
+      <div class="controller bg-black p-5" style="width: 500px; height: 750px;">
+        <div id="power_Container" class="d-flex justify-content-center gap-3">
+
+          <div id="bg"></div>
+            <button class="btn btn-light fs-4" id="connectButton" onclick="stopAnimation()"><i
+              class="bi bi-power"></i></button>
+          </div>
         <div class="d-pad d-grid gap-3" style="width: 200px; height: 100px;">
-            <button type="button" class="btn btn-light left" id="fastBackward"><i class="bi bi-caret-left-fill"></i></button>
-            <button type="button" class="btn btn-light middle" id="startBtn"><i class="bi bi-broadcast-pin"></i></button>
-            <button type="button" class="btn btn-light right" id="fastForward"><i class="bi bi-caret-right-fill"></i></button>
+          <button type="button" class="btn btn-light left" id="fastBackward"><i
+              class="bi bi-caret-left-fill"></i></button>
+          <button type="button" class="btn btn-light middle" id="startBtn"><i class="bi bi-broadcast-pin"></i></button>
+          <button type="button" class="btn btn-light right" id="fastForward"><i
+              class="bi bi-caret-right-fill"></i></button>
         </div>
         <div class="menu mt-5">
           <div class="volume d-flex justify-content-center gap-3">
-            <button class="btn btn-light fs-4" id="decreaseVolumeBtn" style="width: 50px;"><i class="bi bi-volume-down-fill"></i></button>
+            <button class="btn btn-light fs-4" id="decreaseVolumeBtn" style="width: 50px;"><i
+                class="bi bi-volume-down-fill"></i></button>
             <button class="btn btn-light fs-4" id="muteToggle"><i class="bi bi-volume-mute-fill"></i></button>
             <button class="btn btn-light fs-4" id="increaseVolumeBtn"><i class="bi bi-volume-up-fill"></i></button>
-        </div>        
-          <div class="d-flex justify-content-center gap-3">
-            <button id="rewind" class="btn btn-light fs-4"><i class="bi bi-skip-backward-fill" id="previousBtn"></i></button>
-            <button id="Play_Pause" class="btn btn-light fs-4"><i class="bi bi-play-fill bi bi-pause-fill" id="playBtn"></i></button>
-            <button id="forward" class="btn btn-light fs-4"><i class="bi bi-skip-forward-fill" id="nextBtn"></i></button>
           </div>
           <div class="d-flex justify-content-center gap-3">
-            
-                <div id="bg"></div>
-                <button class="btn btn-light fs-4" id="connectButton" onclick="stopAnimation()"><i class="bi bi-power"></i></button>
-            
+            <button id="rewind" class="btn btn-light fs-4"><i class="bi bi-skip-backward-fill"
+                id="previousBtn"></i></button>
+            <button id="Play_Pause" class="btn btn-light fs-4"><i class="bi bi-play-fill bi bi-pause-fill"
+                id="playBtn"></i></button>
+            <button id="forward" class="btn btn-light fs-4"><i class="bi bi-skip-forward-fill"
+                id="nextBtn"></i></button>
           </div>
         </div>
       </div>
@@ -43,21 +54,25 @@
 
   <script type="text/javascript">
     alert("Veuillez vous CASTER à votre appareil de choix puis CLICKER sur POWER");
-    </script>
+  </script>
 
   <!-- Script pour gerer l'animation du bouton POWER et arreter l'animation -->
   <script>
     function stopAnimation() {
-        var bg = document.getElementById('bg');
-        bg.style.animation = 'none'; // Tuer l'animation de pulsion
-        bg.style.backgroundColor = 'black'; // Changer la couleur de la pulsion a noir
-        document.getElementById('connectButton').style.visibility = 'hidden'; // Cacher le bouton
-        var bg1 = document.getElementById('bg1');
-        bg1.style.animation = 'pulse 5s ease ';
+      var bg = document.getElementById('bg');
+      bg.style.animation = 'none'; // Tuer l'animation de pulsion
+      bg.style.backgroundColor = 'black'; // Changer la couleur de la pulsion a noir
+      document.getElementById('connectButton').style.visibility = 'hidden'; // Cacher le bouton
+      var bg1 = document.getElementById('bg1');
+      bg1.style.animation = 'pulse 5s ease ';
     }
-</script>
+  </script>
   <script src="temp2.js" type="module"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js?loadCastFramework=1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+  <script type="text/javascript"
+    src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js?loadCastFramework=1"></script>
 </body>
+
 </html>
